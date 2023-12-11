@@ -29,11 +29,24 @@ const { title } = Astro.props;
   <body>
     <slot />
     <style is:global>
+      @import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
       html {
-        font-family: Inter;
-        background-color: #26272b;
+        font-family: "Varela Round", sans-serif;
+        background-color: #f3f6fa;
         overflow-x: hidden;
         scroll-behavior: smooth;
+        overflow-y: scroll;
+        height: 100%;
+        -webkit-overflow-scrolling: touch;
+        overflow-scrolling: touch;
+        overscroll-behavior-y: none;
+      }
+      body {
+        overflow-y: visible;
+        position: relative;
+        height: unset;
+        overflow-x: hidden;
+        margin: 0;
       }
     </style>
   </body>

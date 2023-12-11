@@ -4,9 +4,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        customPrimary: "rgb(99, 102, 241)",
-        customSecondary: "rgb(161, 163, 247)",
-        customDarkBg1: "rgb(31, 32, 35)",
+        customPrimary: "#0B1320",
+        customSecondary: "#BE6854",
+        customDarkBlue1: "#002C4B",
+        customDarkBlue2: "#1C3F60",
+        customHeadingColor: "#F3F6FA",
+        customHeadingBlack: "#0B1320",
+        customSubheadingColor: "#AFC1D0",
+        customDarkBg1: "rgb(38, 39, 43)",
         customDarkBg2: "rgb(38, 39, 43)",
         customDarkBg3: "rgb(48, 49, 54)",
         customDarkBg3Hover: "rgb(55, 56, 62)",
@@ -15,7 +20,11 @@ module.exports = {
         customGrayText: "rgb(174, 178, 183)",
         customDarkBgTransparent: "rgb(31, 32, 35, 0.7)",
         customDarkBgTransparentDarker: "rgb(0,0,0,0.5)",
-        customDarkBgTransparentLighter: "rgb(48, 49, 54, 0.7)"  
+        customDarkBgTransparentLighter: "rgb(48, 49, 54, 0.7)",
+        exseedOrange: "#E5995E",
+        exseedBlue: "#1D91FD",
+        exseedBlue2: "#2C73FB",
+        exseedBlue3: "#020329",
       },
       fontFamily: {
         Inter: "Inter",
@@ -32,4 +41,3 @@ module.exports = {
     },
   },
 };
-

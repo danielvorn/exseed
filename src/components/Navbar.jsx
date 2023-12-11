@@ -1,123 +1,125 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
 
-import { TailcastLogo } from "../assets/logos/TailcastLogo";
-import { GithubIcon } from "../assets/icons/GithubIcon";
+import { ExseedLogo } from "../assets/logos/ExseedLogo";
 
 const navbarLinks = [
-  { label: "Home", href: "#home", ariaLabel: "Home" },
+  { label: "About Us", href: "#home", ariaLabel: "Home" },
   { label: "Features", href: "#features", ariaLabel: "Features" },
-  { label: "Pricing", href: "#pricing", ariaLabel: "Pricing" },
-  { label: "Feedback", href: "#feedback", ariaLabel: "Feedback" },
-  { label: "FAQ", href: "#FAQ", ariaLabel: "FAQ" },
+  { label: "Careers", href: "#pricing", ariaLabel: "Pricing" },
+  { label: "Contact Us", href: "#feedback", ariaLabel: "Feedback" },
 ];
 
 export const Navbar = () => {
+  const [navActive, setNavActive] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setNavActive(window.scrollY > 100);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="w-full h-20 flex flex-col justify-center items-center fixed bg-customDarkBg1 lg:bg-customDarkBgTransparent z-40 lg:backdrop-blur-xl">
-      <div className="2xl:w-[1280px] xl:w-10/12 w-11/12 flex justify-between items-center relative">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.3 }}
-          exit={{ opacity: 0 }}
-        >
-          <a className="navbar-link" href="#home" aria-label="Home">
-            <div className="flex justify-start items-center grow basis-0">
-              <div className="text-white mr-2 text-6xl">
-                <TailcastLogo />
-              </div>
-              <div className="text-white font-['Inter'] font-bold text-xl">
-                Tailcast
-              </div>
-            </div>
-          </a>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.3 }}
-          exit={{ opacity: 0 }}
-        >
-          <div className="hidden lg:flex h-full pl-12 pb-2">
-            {navbarLinks.map(({ href, label, ariaLabel }) => (
-              <a
-                className="navbar-link"
-                href={href}
-                aria-label={ariaLabel}
-                key={label}
+    <nav
+      className={`fixed z-50 w-full ${
+        navActive ? "bg-customPrimary shadow-2xl " : ""
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex justify-between h-16 items-center">
+          <ExseedLogo />
+          <div className="hidden md:flex md:items-center md:ml-4">
+            <ul className="flex space-x-4">
+              <li>
+                <a href="#" className="text-customHeadingColor">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-customHeadingColor">
+                  Features
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-customHeadingColor">
+                  Careers
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-customHeadingColor">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+            <button className="mobile-menu-button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="#F3F6FA"
               >
-                {label}
-              </a>
-            ))}
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                ></path>
+              </svg>
+            </button>
           </div>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.3 }}
-          exit={{ opacity: 0 }}
-        >
-          <div className="grow basis-0 justify-end hidden lg:flex">
-            <a
-              className="text-white custom-border-gray rounded-xl
-           bg-customDarkBg2 hover:bg-customDarkBg3  border-gray-700 pl-6 pr-8 pt-2 pb-2 text-sm flex"
-              href="https://github.com/matt765/Tidestream"
-              target="_blank"
-              aria-label="source code"
+          {/* <div className="text-white">
+            <div className="hidden lg:flex h-full space-x-5">
+              {navbarLinks.map(({ href, label, ariaLabel }) => (
+                <a
+                  className="navbar-link"
+                  href={href}
+                  aria-label={ariaLabel}
+                  key={label}
+                >
+                  <span className="font-semibold">{label}</span>
+                </a>
+              ))}
+            </div>
+            <div
+              className="lg:hidden flex flex-col  px-2 py-3 border-solid border border-gray-600 rounded-md cursor-pointer hover:bg-customDarkBg2"
+              onClick={() => setIsOpen(!isOpen)}
             >
-              <GithubIcon />
-              <span className="pt-px">Source code</span>
-            </a>
-          </div>
-        </motion.div>
-        <div
-          className="lg:hidden flex flex-col  px-2 py-3 border-solid border border-gray-600 rounded-md cursor-pointer hover:bg-customDarkBg2"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <div className="w-5 h-0.5 bg-gray-500  mb-1"></div>
-          <div className="w-5 h-0.5 bg-gray-500  mb-1"></div>
-          <div className="w-5 h-0.5 bg-gray-500 "></div>
+              <div className="w-5 h-0.5 bg-gray-500 mb-1"></div>
+              <div className="w-5 h-0.5 bg-gray-500 mb-1"></div>
+              <div className="w-5 h-0.5 bg-gray-500"></div>
+            </div>
+          </div> */}
         </div>
       </div>
       {/* Mobile navbar */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.3 }}
-            exit={{ opacity: 0 }}
+          <div
+            className="flex flex-col mt-12 text-customHeadingColor bg-customPrimary lg:hidden absolute top-4 left-0 z-50 w-full 
+        items-center gap-10 py-8"
           >
-            <div
-              className="flex flex-col mt-16 lg:hidden absolute top-4 left-0  bg-customDarkBg1 z-50 w-full 
-        items-center gap-10 pb-10 border-y border-solid border-customDarkBg3 pt-10
-        "
-            >
-              {navbarLinks.map(({ label, href, ariaLabel }) => (
-                <a
-                  key={href}
-                  className="navbar-link"
-                  href={href}
-                  onClick={() => setIsOpen(false)}
-                  aria-label={ariaLabel}
-                >
-                  {label}
-                </a>
-              ))}
+            {navbarLinks.map(({ label, href, ariaLabel }) => (
               <a
-                className="text-white custom-border-gray rounded-xl
-           bg-customDarkBg2 hover:bg-customDarkBg3  border-gray-700 pl-6 pr-8 pt-2 pb-2 text-sm flex"
-                href="https://github.com/matt765/Tidestream"
-                target="_blank"
+                key={href}
+                className="navbar-link"
+                href={href}
+                onClick={() => setIsOpen(false)}
+                aria-label={ariaLabel}
               >
-                <GithubIcon />
-                Source code
+                {label}
               </a>
-            </div>
-          </motion.div>
+            ))}
+          </div>
         )}
       </AnimatePresence>
     </nav>

@@ -1,0 +1,112 @@
+---
+import dashboard from "../assets/images/dashboard.png";
+import CRM from "../assets/images/CRM.png";
+import employees from "../assets/images/employees.png";
+import POS from "../assets/images/POS.png";
+import barChart from "../assets/images/bar_chart.png";
+import inventory from "../assets/images/inventory.png";
+import pieChart from "../assets/images/pie_chart.png";
+import purchase from "../assets/images/purchase.png";
+import sales from "../assets/images/sales.png";
+---
+
+<script>
+  let lastScrollTop = 0;
+  const leftCards = document.querySelector(".left-cards");
+  const rightCards = document.querySelector(".right-cards");
+
+  window.addEventListener("scroll", function () {
+    const currentScroll =
+      window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop && parseFloat(leftCards.style.top) > 10) {
+      // Scrolling down
+      const scrolledPercentage = (currentScroll / window.innerHeight) * 100;
+      if (scrolledPercentage > 18.6538) {
+        leftCards.style.top = "9.99085%";
+        rightCards.style.top = "9.99085%";
+      } else {
+        leftCards.style.top = `${18.6538 - scrolledPercentage}%`;
+        rightCards.style.top = `${18.6538 - scrolledPercentage}%`;
+      }
+    } else if (currentScroll == 0) {
+      // Scrolling up
+      leftCards.style.top = "18.6538%";
+      rightCards.style.top = "18.6538%";
+    }
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+  });
+</script>
+<!-- class="w-screen flex justify-center items-center bg-customPrimary" -->
+<section
+  class="w-screen flex justify-center items-center bg-customDarkBlue1"
+  id="home"
+>
+  <div
+    class="w-full md:w-[800px] xl:w-[900px] flex flex-col justify-center items-center pt-32 lg:pt-40 text-center"
+  >
+    <div
+      class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide text-white px-8 sm:px-8 md:px-20 lg:px-4"
+    >
+      <span> Stay connected and grow your business from anywhere, anytime</span>
+    </div>
+    <div
+      class="text-base md:text-xl xl:text-2xl mt-10 px-12 sm:px-48 text-customSubheadingColor"
+    >
+      Powering businesses in Cambodia through process transformation, digital
+      literacy and access to finance
+    </div>
+    <div
+      class="flex gap-6 sm:flex-row sm:gap-2 mt-12 mb-12 sm:mb-16 sm:justify-center"
+    >
+      <div
+        class="custom-button-colored w-28 sm:w-52 h-12 mr-0 sm:mr-4 lg:mr-6 mb-2 sm:mb-0"
+      >
+        Features
+      </div>
+      <div
+        class="w-28 sm:w-52 h-12 font-bold text-white border border-solid border-white flex justify-center items-center cursor-pointer hover:border-customSecondary transition"
+      >
+        Contact Us
+      </div>
+    </div>
+    <div class="w-[22rem] sm:w-[42rem] shadow-2xl">
+      <img
+        src={dashboard}
+        alt="Homepage hero timeline"
+        class="mb-[4rem] shadow-xl rounded-lg md:hidden"
+      />
+    </div>
+    <div class="hidden md:inline">
+      <div class="hero-cards">
+        <div class="left-cards" style="top: 18.6538%">
+          <div class="cards-row top-cards-row left-cards-row">
+            <img src={pieChart} alt="pieChart" />
+            <img src={employees} alt="HR module preview" />
+          </div>
+          <div class="cards-row bottom-cards-row left-cards-row">
+            <img src={sales} alt="Sales module" />
+            <img src={CRM} alt="CRM module preview" />
+          </div>
+        </div>
+        <div>
+          <img
+            src={dashboard}
+            alt="Homepage hero timeline"
+            class="rounded-2xl"
+          />
+        </div>
+        <div class="right-cards" style="top: 18.6538%">
+          <div class="cards-row top-cards-row right-cards-row">
+            <img src={POS} alt="POS module preview" />
+            <img src={barChart} alt="Homepage hero piechart" />
+          </div>
+          <div class="cards-row bottom-cards-row right-cards-row">
+            <img src={inventory} alt="inventory module preview" />
+            <img src={purchase} alt="purchase module preview" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

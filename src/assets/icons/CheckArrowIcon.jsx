@@ -1,13 +1,25 @@
 export const CheckArrowIcon = () => (
-  <div className="rounded-full bg-transparent w-5 h-5 flex justify-center items-center mr-4">
+  <div className="mr-4">
     <svg
+      fill="#002C4B"
+      viewBox="0 0 24.00 24.00"
+      width={32}
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 512 512"
-      width="20px"
-      height="20px"
-      className="fill-customSecondary"
+      id="check-circle"
+      className="icon glyph"
+      stroke="#002C4B"
+      strokeWidth="0.00024000000000000003"
+      transform="matrix(1, 0, 0, 1, 0, 0)"
     >
-      <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
+      <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+      <g
+        id="SVGRepo_tracerCarrier"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      ></g>
+      <g id="SVGRepo_iconCarrier">
+        <path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm4.71,8.71-5,5a1,1,0,0,1-1.42,0l-3-3a1,1,0,1,1,1.42-1.42L11,13.59l4.29-4.3a1,1,0,0,1,1.42,1.42Z"></path>
+      </g>
     </svg>
   </div>
 );

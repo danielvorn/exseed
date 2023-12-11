@@ -1,0 +1,16 @@
+---
+const { title, description, img } = Astro.props;
+---
+
+<div class="pr-[3rem]"></div>
+<div
+  class="slide-box h-[17rem] bg-[#F3F6FA] w-[17rem] rounded-[3rem] overflow-hidden"
+>
+  <div class="m-8 space-y-[.65rem]">
+    <img class="w-14 h-14 rounded-lg" src={img} alt="module-icon" />
+    <div class="text-[1.7rem]">{title}</div>
+    <p class="text-[#0B1320] text-sm">
+      {description}
+    </p>
+  </div>
+</div>

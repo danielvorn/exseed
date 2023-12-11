@@ -7,7 +7,7 @@
   @apply text-white text-4xl xl:text-5xl font-bold tracking-normal;
 }
 .custom-block-subtitle {
-  @apply text-xs text-customSecondary  tracking-wider font-bold uppercase;
+  @apply text-xs text-exseedBlue  tracking-wider font-bold uppercase;
 }
 .custom-content-title {
   @apply text-white text-lg font-bold tracking-normal;
@@ -30,10 +30,6 @@
 .custom-bg-dark3 {
   @apply bg-customDarkBg3  fill-customDarkBg3;
 }
-body,
-html {
-  @apply bg-customDarkBg2;
-}
 
 /* Borders */
 
@@ -47,16 +43,96 @@ html {
 /* Buttons */
 
 .custom-button-colored {
-  @apply rounded-lg font-bold bg-customPrimary text-white flex justify-center items-center hover:bg-[#7274f3] cursor-pointer transition;
-}
-
-/* Navbar */
-
-.navbar-link {
-  @apply text-white lg:text-base text-2xl  leading-6 mr-4 ml-4   2xl:mr-6 2xl:ml-6 cursor-pointer font-normal lg:font-medium hover:scale-110 transition duration-300 h-full pt-2;
+  @apply font-bold bg-customPrimary text-white flex justify-center items-center hover:bg-customSecondary cursor-pointer transition;
 }
 
 /* Preventing FOUC */
 @font-face {
   font-display: var(--fontsource-Inter-font-display, optional);
+}
+
+.container {
+  width: 400%;
+  height: 100vh;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.hero-cards {
+  padding-bottom: 90px;
+  display: grid;
+  grid-template-columns: 1fr 850px 1fr;
+  grid-template-rows: 540px;
+  gap: 33px;
+}
+
+.cards-row {
+  display: flex;
+  position: absolute;
+  max-height: 50%;
+  gap: 20px;
+  width: 1000px;
+}
+
+.left-cards-row {
+  right: 0;
+  justify-content: flex-end;
+}
+
+.main-card {
+  filter: drop-shadow(3px 5px 75px rgba(0, 0, 0, 0.28));
+  border-radius: 12px;
+}
+
+.left-cards,
+.right-cards {
+  display: flex;
+  flex-direction: column;
+  max-height: 90%;
+  gap: 23px;
+  position: relative;
+  transition: 1s ease-out top;
+  top: 18.6538%;
+}
+
+.left-cards-row {
+  right: 0;
+  justify-content: flex-end;
+}
+
+.top-cards-row {
+  top: 0;
+}
+.bottom-cards-row {
+  bottom: 0;
+}
+.top-cards-row {
+  top: 0;
+}
+
+.cards-row > img {
+  height: 232px;
+  box-shadow: 2.7px 3.5px 22.4px rgba(0, 0, 0, 0.14);
+  border-radius: 14px;
+}
+
+.slides-wrapper {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+.slide-box {
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  flex-shrink: 0;
+  color: black;
+  cursor: pointer;
 }
