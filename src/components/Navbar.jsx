@@ -11,6 +11,7 @@ const navbarLinks = [
 ];
 
 export const Navbar = ({ pathname }) => {
+  console.log({ pathname });
   const [navActive, setNavActive] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
