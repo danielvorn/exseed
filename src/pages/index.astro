@@ -2,19 +2,19 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import { Navbar } from "../components/Navbar.jsx";
-import { Features2 } from "../components/Features2.jsx";
+import { ChooseUs } from "../components/ChooseUs.jsx";
 import { Footer } from "../components/Footer.jsx";
 import Modules from "../components/Modules.astro";
 import TryUs from "../components/TryUs.astro";
-import "../styles/Diagonals.css";
 import "../styles/Theme.css";
+const { pathname } = Astro.url;
 ---
 
-<Layout title="Tailcast">
-  <Navbar client:load />
+<Layout title="Exseed Technologies">
+  <Navbar pathname={pathname} client:load />
   <Hero />
-  <Features2 client:load />
+  <ChooseUs />
   <Modules />
   <TryUs />
-  <Footer />
+  <Footer aboutUs={false} />
 </Layout>

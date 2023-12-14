@@ -1,0 +1,61 @@
+---
+import { LinkedInIcon } from "../assets/icons/LinkedInIcon";
+import { Navbar } from "../components/Navbar";
+import Layout from "../layouts/Layout.astro";
+const { pathname } = Astro.url;
+---
+
+<Layout title="Careers">
+  <Navbar pathname={pathname} client:load />
+  <div class="flex flex-col h-screen">
+    <div class="flex flex-col md:flex-row flex-1 bg-customPrimary">
+      <div
+        class="pb-[3rem] md:w-2/3 md:order-1 flex flex-col justify-center items-center"
+      >
+        <div class="p-4 md:p-8 mt-[5rem] mb-[2rem] lg:mx-[3rem] space-y-4">
+          <h2 class="mt-8 sm:mt-0 text-2xl font-bold mb-4 text-[#AFC1D0]">
+            CAREERS
+          </h2>
+          <p class="text-xl text-customWhiteText">
+            Are you looking for an exciting opportunity to work with a startup
+            tech company that is changing the game in our industry? At Exseed
+            Technologies, we are always on the lookout for talented individuals
+            who are passionate about innovation, creativity, and collaboration.
+          </p>
+          <p class="text-xl text-customWhiteText">
+            Our dynamic and fast-paced work environment offers a range of
+            opportunities for experienced professionals and recent graduates
+            alike. Whether you are interested in software development,
+            marketing, or customer support, we have a role that will challenge
+            and inspire you. We value diversity, teamwork, and a commitment to
+            excellence, and we are dedicated to providing our employees with the
+            tools and resources they need to succeed. So why not join our team
+            and help us shape the future of technology?
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="py-[5rem] md:py-[0] bg-customDarkBlue text-customWhiteText md:w-1/3 md:order-2 flex flex-col justify-center items-center"
+      >
+        <h2 class="px-11 text-center text-3xl mb-8">
+          Follow us for more opportunities on our LinkedIn page:
+        </h2>
+        <a
+          href="https://www.linkedin.com/company/exseed-technologies/"
+          target="_blank"
+          class="w-[15rem] sm:w-52 h-12 font-bold border-solid flex justify-center items-center cursor-pointer border-2 border-customWhiteText hover:border-customSecondary transition space-x-3"
+        >
+          <LinkedInIcon />
+          <span class="text-customTextWhite">Opportunities</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  html {
+    font-family: "Varela Round", sans-serif;
+  }
+</style>

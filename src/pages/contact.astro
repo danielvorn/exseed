@@ -1,0 +1,280 @@
+---
+import { Navbar } from "../components/Navbar";
+import Layout from "../layouts/Layout.astro";
+const { pathname } = Astro.url;
+---
+
+<Layout title="Contact Us">
+  <Navbar pathname={pathname} client:load />
+  <div class="flex flex-col h-screen">
+    <div class="flex flex-col md:flex-row flex-1 bg-[#03080e]">
+      <div
+        class="bg-customPrimary md:w-2/3 md:order-1 flex-1 justify-center items-center"
+      >
+        <form>
+          <!-- <form action="https://formspree.io/f/mrgwnwgp" method="POST"> -->
+          <div class="flex flex-col">
+            <div
+              class="flex-1 justify-center items-center bg-customPrimary text-customWhiteText p-4"
+            >
+              <div class="max-w-3xl mx-auto">
+                <h1
+                  class="text-2xl mt-[7rem] mb-[3rem] text-[#AFC1D0] text-center"
+                >
+                  We'd love to hear from you
+                </h1>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                  <div>
+                    <label
+                      id="first_name_label"
+                      for="first_name"
+                      class="block mb-1 text-sm"
+                      >First Name<span class="text-red-500">*</span></label
+                    >
+                    <input
+                      id="first_name"
+                      name="first_name"
+                      type="text"
+                      class="w-full border border-gray-300 rounded-sm px-3 py-2 text-customBlackText"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      id="last_name_label"
+                      for="last_name"
+                      class="block mb-1 text-sm"
+                      >Last Name<span class="text-red-500">*</span></label
+                    >
+                    <input
+                      id="last_name"
+                      name="last_name"
+                      type="text"
+                      class="w-full border border-gray-300 rounded-sm px-3 py-2 text-customBlackText"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      id="email_label"
+                      for="email"
+                      class="block mb-1 text-sm"
+                      >Email<span class="text-red-500">*</span></label
+                    >
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      class="w-full border border-gray-300 rounded-sm px-3 py-2 text-customBlackText"
+                    />
+                  </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                  <div>
+                    <label
+                      id="company_label"
+                      for="company_name"
+                      class="block mb-1 text-sm"
+                      >Company Name<span class="text-red-500">*</span></label
+                    >
+                    <input
+                      id="company_name"
+                      name="company_name"
+                      type="text"
+                      class="w-full border border-gray-300 rounded-sm px-3 py-2 text-customBlackText"
+                    />
+                  </div>
+                  <div>
+                    <label for="position" class="block mb-1 text-sm"
+                      >Position (optional)</label
+                    >
+                    <input
+                      id="position"
+                      name="position"
+                      type="text"
+                      class="w-full border border-gray-300 rounded-sm px-3 py-2 text-customBlackText"
+                    />
+                  </div>
+                  <div>
+                    <label for="phone_number" class="block mb-1 text-sm"
+                      >Phone Number</label
+                    >
+                    <input
+                      id="phone_number"
+                      name="phone_number"
+                      type="tel"
+                      class="w-full border border-gray-300 rounded-sm px-3 py-2 text-customBlackText"
+                    />
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <label id="reason_label" class="block mb-5 text-sm"
+                    >Reason for Inquiry<span class="text-red-500">*</span
+                    ></label
+                  >
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <input
+                        id="erp"
+                        type="radio"
+                        name="reason"
+                        value="ERP Software"
+                      />
+                      <label for="erp" class="ml-2">ERP Software</label>
+                    </div>
+                    <div>
+                      <input
+                        id="distribution"
+                        type="radio"
+                        name="reason"
+                        value="Distribution Management System"
+                      />
+                      <label for="distribution" class="ml-2"
+                        >Distribution Management System</label
+                      >
+                    </div>
+                    <div>
+                      <input
+                        id="pos"
+                        type="radio"
+                        name="reason"
+                        value="Point-of-Sales"
+                      />
+                      <label for="pos" class="ml-2">Point-of-Sales</label>
+                    </div>
+                    <div>
+                      <input
+                        id="loan"
+                        type="radio"
+                        name="reason"
+                        value="Loan Management System"
+                      />
+                      <label for="loan" class="ml-2"
+                        >Loan Management System</label
+                      >
+                    </div>
+                    <div>
+                      <input
+                        id="app"
+                        type="radio"
+                        name="reason"
+                        value="Mobile App"
+                      />
+                      <label for="app" class="ml-2">Mobile App</label>
+                    </div>
+                    <div>
+                      <input
+                        id="other"
+                        type="radio"
+                        name="reason"
+                        value="Other"
+                      />
+                      <label for="other" class="ml-2">Other</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <label for="comments" class="block mb-1 text-sm"
+                    >Comments</label
+                  >
+                  <textarea
+                    id="comments"
+                    name="comments"
+                    class="w-full border border-gray-300 rounded-sm px-3 py-2 text-customBlackText"
+                    rows="4"></textarea>
+                </div>
+                <div
+                  class="flex justify-between items-center pb-[4rem] md:pb-0"
+                >
+                  <p>
+                    <span class="text-lg text-red-500">*</span>Red asterisk
+                    denotes a required field
+                  </p>
+                  <button
+                    type="submit"
+                    class="bg-customDarkBlue hover:bg-customSecondary text-customWhiteText px-16 py-2"
+                    >Submit</button
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</Layout>
+<script is:inline>
+  const form = document.querySelector("form");
+  const fieldsToValidate = [
+    {
+      input: document.getElementById("first_name"),
+      label: document.getElementById("first_name_label"),
+    },
+    {
+      input: document.getElementById("last_name"),
+      label: document.getElementById("last_name_label"),
+    },
+    {
+      input: document.getElementById("company_name"),
+      label: document.getElementById("company_label"),
+    },
+    {
+      input: document.getElementById("email"),
+      label: document.getElementById("email_label"),
+    },
+  ];
+  const reasonLabel = document.getElementById("reason_label");
+  const reasonInputs = document.querySelectorAll('input[name="reason"]');
+
+  function validateField(input, label, validationFunction) {
+    const isValid = validationFunction(input.value.trim());
+    if (!isValid) {
+      input.classList.add("bg-red-100");
+      label.classList.add("text-red-500");
+    } else {
+      input.classList.remove("bg-red-100");
+      label.classList.remove("text-red-500");
+    }
+    return isValid;
+  }
+
+  function validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return email !== "" && emailRegex.test(email);
+  }
+
+  form.addEventListener("submit", function (event) {
+    let valid = true;
+
+    fieldsToValidate.forEach(({ input, label }) => {
+      valid = validateField(input, label, (value) => value !== "") && valid;
+    });
+
+    const emailInput = document.getElementById("email");
+    const emailLabel = document.getElementById("email_label");
+    valid = validateField(emailInput, emailLabel, validateEmail) && valid;
+
+    let reasonSelected = false;
+    reasonInputs.forEach((input) => {
+      if (input.checked) {
+        reasonSelected = true;
+      }
+    });
+    if (!reasonSelected) {
+      valid = false;
+      reasonLabel.classList.add("text-red-500");
+    } else {
+      reasonLabel.classList.remove("text-red-500");
+    }
+
+    if (!valid) {
+      alert("Please address all required fields");
+      event.preventDefault(); // Prevent form submission if validation fails
+    }
+  });
+</script>
+
+<style>
+  html {
+    font-family: "Varela Round", sans-serif;
+  }
+</style>

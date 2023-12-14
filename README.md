@@ -1,31 +1,3 @@
-# Tailcast
-
-Dark themed website template built on AstroJS, designed for technological startup business.
-
-## Tech stack:
-
-Astro, React, Tailwind, Framer Motion
-
-## Live link
-[https://tailcast.vercel.app/](https://tailcast.vercel.app/)
-
-##  Project Structure
-
-```
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── assets
-│   │   ├── icons
-│   │   ├── images
-│   │   └── logos
-│   ├── components
-│   ├── layouts
-│   ├──  pages
-│   └── styles
-└── package.json
-```
-
 ##  How to run
 
 All commands are run from the root of the project, from a terminal:

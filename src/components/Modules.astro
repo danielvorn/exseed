@@ -10,32 +10,19 @@ import purchaseIcon from "../assets/images/purchase-icon.png";
 import employeesIcon from "../assets/images/employees-icon.png";
 ---
 
-<style>
-  .slides-wrapper {
-    height: 100%;
-    width: 100%;
-    position: relative;
-    display: flex;
-    align-items: flex-start;
-    overflow: hidden;
-  }
-
-  .slide-box {
-    box-sizing: border-box;
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    flex-shrink: 0;
-    color: black;
-    cursor: pointer;
-  }
-</style>
-<div class="bg-[#002C4B] pb-[8rem]">
-  <div class="pt-[8rem] pb-[3rem] px-[5rem]">
-    <h1 class="text-[#F3F6FA] text-5xl mb-5">Simplify your business</h1>
-    <h2 class="text-customSubheadingColor max-w-xl text-4xl mb-6">
+<div
+  class="bg-primaryBackground pb-[4rem] md:pb-[8rem] text-customBlackText"
+  id="features"
+>
+  <div class="pt-[4rem] px-[2rem] md:pt-[8rem] pb-[3rem] md:px-[5rem]">
+    <h1
+      class="text-[#F3F6FA] text-3xl md:text-5xl mb-5 text-center md:text-left"
+    >
+      Simplify your business
+    </h1>
+    <h2
+      class="text-customSubtext max-w-xl text-2xl md:text-4xl md:mb-6 text-center md:text-left"
+    >
       Discover a suite of modules catering to every aspect of your operations
     </h2>
   </div>
@@ -89,6 +76,28 @@ import employeesIcon from "../assets/images/employees-icon.png";
     />
   </div>
 </div>
+<style>
+  .slides-wrapper {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    overflow: hidden;
+  }
+
+  .slide-box {
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    flex-shrink: 0;
+    color: black;
+    cursor: pointer;
+  }
+</style>
 <script is:inline src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
 <script is:inline src="https://unpkg.com/gsap@3/dist/Draggable.min.js"></script>
 <script>

@@ -2,12 +2,12 @@ import { FacebookIcon } from "../assets/icons/FacebookIcon";
 import { LinkedInIcon } from "../assets/icons/LinkedInIcon";
 import { ExseedLogo } from "../assets/logos/ExseedLogo";
 
-export const Footer = () => {
+export const Footer = ({ aboutUs }) => {
   return (
     <footer>
-      <div className="py-3 bg-black flex items-center justify-around">
+      <div className="py-3 bg-[#03080e] flex items-center justify-around border-t-[.001rem] border-t-white">
         <ExseedLogo />
-        <p className="text-customHeadingColor">
+        <p className="hidden md:inline text-customWhiteText">
           ® Exseed and the Exseed logo are registered trademarks of Exseed
           Technologies in Cambodia and other selected countries.
         </p>

@@ -39,19 +39,19 @@ import sales from "../assets/images/sales.png";
 </script>
 <!-- class="w-screen flex justify-center items-center bg-customPrimary" -->
 <section
-  class="w-screen flex justify-center items-center bg-customDarkBlue1"
+  class="w-screen flex justify-center items-center bg-primaryBackground"
   id="home"
 >
   <div
     class="w-full md:w-[800px] xl:w-[900px] flex flex-col justify-center items-center pt-32 lg:pt-40 text-center"
   >
     <div
-      class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide text-white px-8 sm:px-8 md:px-20 lg:px-4"
+      class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide text-customWhiteText px-8 sm:px-8 md:px-20 lg:px-4"
     >
       <span> Stay connected and grow your business from anywhere, anytime</span>
     </div>
     <div
-      class="text-base md:text-xl xl:text-2xl mt-10 px-12 sm:px-48 text-customSubheadingColor"
+      class="text-xl md:text-xl xl:text-2xl mt-10 px-12 sm:px-48 text-customSubtext"
     >
       Powering businesses in Cambodia through process transformation, digital
       literacy and access to finance
@@ -59,16 +59,20 @@ import sales from "../assets/images/sales.png";
     <div
       class="flex gap-6 sm:flex-row sm:gap-2 mt-12 mb-12 sm:mb-16 sm:justify-center"
     >
-      <div
-        class="custom-button-colored w-28 sm:w-52 h-12 mr-0 sm:mr-4 lg:mr-6 mb-2 sm:mb-0"
+      <a href="#features">
+        <div
+          class="font-bold bg-customDarkBlue text-customWhiteText flex justify-center items-center hover:bg-customSecondary cursor-pointer transition custom-button-colored w-28 sm:w-52 h-12 mr-0 sm:mr-4 lg:mr-6 mb-2 sm:mb-0"
+        >
+          Features
+        </div></a
       >
-        Features
-      </div>
-      <div
-        class="w-28 sm:w-52 h-12 font-bold text-white border border-solid border-white flex justify-center items-center cursor-pointer hover:border-customSecondary transition"
-      >
-        Contact Us
-      </div>
+      <a href="/contact">
+        <div
+          class="w-28 sm:w-52 h-12 font-bold text-customWhiteText border border-solid flex justify-center items-center cursor-pointer border-white hover:border-customSecondary transition"
+        >
+          Contact Us
+        </div>
+      </a>
     </div>
     <div class="w-[22rem] sm:w-[42rem] shadow-2xl">
       <img
@@ -93,7 +97,7 @@ import sales from "../assets/images/sales.png";
           <img
             src={dashboard}
             alt="Homepage hero timeline"
-            class="rounded-2xl"
+            class="rounded-2xl dashboard-shadow"
           />
         </div>
         <div class="right-cards" style="top: 18.6538%">
@@ -110,3 +114,70 @@ import sales from "../assets/images/sales.png";
     </div>
   </div>
 </section>
+<style>
+  .box-shadow {
+  }
+  .hero-cards {
+    padding-bottom: 90px;
+    display: grid;
+    grid-template-columns: 1fr 850px 1fr;
+    grid-template-rows: 549px;
+    gap: 33px;
+  }
+
+  .cards-row {
+    display: flex;
+    position: absolute;
+    max-height: 50%;
+    gap: 20px;
+    width: 1000px;
+  }
+
+  .left-cards-row {
+    right: 0;
+    justify-content: flex-end;
+  }
+
+  .main-card {
+    filter: drop-shadow(3px 5px 75px rgba(0, 0, 0, 0.28));
+    border-radius: 12px;
+  }
+
+  .left-cards,
+  .right-cards {
+    display: flex;
+    flex-direction: column;
+    max-height: 90%;
+    gap: 23px;
+    position: relative;
+    transition: 1s ease-out top;
+    top: 18.6538%;
+  }
+
+  .left-cards-row {
+    right: 0;
+    justify-content: flex-end;
+  }
+
+  .top-cards-row {
+    top: 0;
+  }
+  .bottom-cards-row {
+    bottom: 0;
+  }
+  .top-cards-row {
+    top: 0;
+  }
+
+  .cards-row > img {
+    height: 238px;
+    box-shadow: 2.7px 3.5px 22.4px rgba(0, 0, 0, 0.14);
+    border-radius: 14px;
+  }
+
+  .dashboard-shadow {
+    -webkit-box-shadow: 10px 10px 300px -29px rgba(87, 87, 87, 1);
+    -moz-box-shadow: 10px 10px 300px -29px rgba(87, 87, 87, 1);
+    box-shadow: 10px 10px 300px -29px rgba(87, 87, 87, 1);
+  }
+</style>

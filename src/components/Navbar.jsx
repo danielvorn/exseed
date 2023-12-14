@@ -1,16 +1,16 @@
-import { AnimatePresence, motion } from "framer-motion";
-import React, { useState, useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
 
 import { ExseedLogo } from "../assets/logos/ExseedLogo";
 
 const navbarLinks = [
-  { label: "About Us", href: "#home", ariaLabel: "Home" },
-  { label: "Features", href: "#features", ariaLabel: "Features" },
-  { label: "Careers", href: "#pricing", ariaLabel: "Pricing" },
-  { label: "Contact Us", href: "#feedback", ariaLabel: "Feedback" },
+  { label: "About", href: "/about", ariaLabel: "About" },
+  { label: "Features", href: "/#features", ariaLabel: "Features" },
+  { label: "Careers", href: "/careers", ariaLabel: "Careers" },
+  { label: "Contact", href: "/contact", ariaLabel: "Contact" },
 ];
 
-export const Navbar = () => {
+export const Navbar = ({ pathname }) => {
   const [navActive, setNavActive] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -28,32 +28,54 @@ export const Navbar = () => {
 
   return (
     <nav
-      className={`fixed z-50 w-full ${
-        navActive ? "bg-customPrimary shadow-2xl " : ""
+      className={`z-50 w-full fixed ${
+        navActive ||
+        pathname === "/about" ||
+        pathname === "/careers" ||
+        pathname === "/contact"
+          ? "bg-[#03080e] shadow-2xl "
+          : ""
       }`}
     >
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between h-16 items-center">
-          <ExseedLogo />
+          <a href="/">
+            <ExseedLogo />
+          </a>
           <div className="hidden md:flex md:items-center md:ml-4">
-            <ul className="flex space-x-4">
+            <ul className="flex items-center space-x-4">
               <li>
-                <a href="#" className="text-customHeadingColor">
+                <a
+                  href="/about"
+                  className={`text-customWhiteText ${
+                    pathname === "/about" ? "text-xl" : ""
+                  }`}
+                >
                   About
                 </a>
               </li>
               <li>
-                <a href="#" className="text-customHeadingColor">
+                <a href="/#features" className="text-customWhiteText">
                   Features
                 </a>
               </li>
               <li>
-                <a href="#" className="text-customHeadingColor">
+                <a
+                  href="/careers"
+                  className={`text-customWhiteText ${
+                    pathname === "/careers" ? "text-xl" : ""
+                  }`}
+                >
                   Careers
                 </a>
               </li>
               <li>
-                <a href="#" className="text-customHeadingColor">
+                <a
+                  href="/contact"
+                  className={`text-customWhiteText ${
+                    pathname === "/contact" ? "text-xl" : ""
+                  }`}
+                >
                   Contact
                 </a>
               </li>
@@ -69,43 +91,21 @@ export const Navbar = () => {
                 stroke="#F3F6FA"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M4 6h16M4 12h16m-7 6h7"
                 ></path>
               </svg>
             </button>
           </div>
-          {/* <div className="text-white">
-            <div className="hidden lg:flex h-full space-x-5">
-              {navbarLinks.map(({ href, label, ariaLabel }) => (
-                <a
-                  className="navbar-link"
-                  href={href}
-                  aria-label={ariaLabel}
-                  key={label}
-                >
-                  <span className="font-semibold">{label}</span>
-                </a>
-              ))}
-            </div>
-            <div
-              className="lg:hidden flex flex-col  px-2 py-3 border-solid border border-gray-600 rounded-md cursor-pointer hover:bg-customDarkBg2"
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              <div className="w-5 h-0.5 bg-gray-500 mb-1"></div>
-              <div className="w-5 h-0.5 bg-gray-500 mb-1"></div>
-              <div className="w-5 h-0.5 bg-gray-500"></div>
-            </div>
-          </div> */}
         </div>
       </div>
       {/* Mobile navbar */}
       <AnimatePresence>
         {isOpen && (
           <div
-            className="flex flex-col mt-12 text-customHeadingColor bg-customPrimary lg:hidden absolute top-4 left-0 z-50 w-full 
+            className="flex flex-col mt-12 text-customWhiteText bg-[#03080e] lg:hidden absolute top-4 left-0 z-50 w-full 
         items-center gap-10 py-8"
           >
             {navbarLinks.map(({ label, href, ariaLabel }) => (
