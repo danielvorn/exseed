@@ -49,7 +49,7 @@ export const Navbar = ({ pathname }) => {
                 <a
                   href="/about"
                   className={`text-customWhiteText ${
-                    pathname === "/about" ? "text-xl" : ""
+                    pathname === "/about/" ? "text-xl" : ""
                   }`}
                 >
                   About
@@ -64,7 +64,7 @@ export const Navbar = ({ pathname }) => {
                 <a
                   href="/careers"
                   className={`text-customWhiteText ${
-                    pathname === "/careers" ? "text-xl" : ""
+                    pathname === "/careers/" ? "text-xl" : ""
                   }`}
                 >
                   Careers
@@ -74,7 +74,7 @@ export const Navbar = ({ pathname }) => {
                 <a
                   href="/contact"
                   className={`text-customWhiteText ${
-                    pathname === "/contact" ? "text-xl" : ""
+                    pathname === "/contact/" ? "text-xl" : ""
                   }`}
                 >
                   Contact
