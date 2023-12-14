@@ -31,9 +31,9 @@ export const Navbar = ({ pathname }) => {
     <nav
       className={`z-50 w-full fixed ${
         navActive ||
-        pathname === "/about" ||
-        pathname === "/careers" ||
-        pathname === "/contact"
+        pathname === "/about/" ||
+        pathname === "/careers/" ||
+        pathname === "/contact/"
           ? "bg-[#03080e] shadow-2xl "
           : ""
       }`}
